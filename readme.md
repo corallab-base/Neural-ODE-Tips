@@ -1,6 +1,6 @@
-## Tips for Training Neural ODE
+# Tips for Training Neural ODE
 
-1. Modules
+## 1. Modules
 
 ### odeint vs ode_adjoint_int
 If you have enough DRAM, head to ODEINT as it's MUCH faster than Adjoint, which has depth-invariant DRAM usage
@@ -18,7 +18,10 @@ torchdiffeq has the best compatibility and most odesolver options. torchdyn is a
 
 *I personlly recommend setting 1*
 
-2. Trainings:
+## 2. Trainings:
 
 ### Behavior
 Based on the experience of training poses, Neural-ODE based method tends to learn the spatial feature first and then the temporal feature. With generic RNN embeddings, the model converges slowly. So the tip is wait at least 10 epochs to determine the feasibility of the model.
+
+### Mini-batch
+Neural ODE is inherently incompatiable with mini-batch. So be sure to set mini-batch size to 1.
