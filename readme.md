@@ -24,4 +24,4 @@ torchdiffeq has the best compatibility and most odesolver options. torchdyn is a
 Based on the experience of training poses, Neural-ODE based method tends to learn the spatial feature first and then the temporal feature. With generic RNN embeddings, the model converges slowly. So the tip is wait at least 10 epochs to determine the feasibility of the model.
 
 ### Mini-batch
-Neural ODE is inherently incompatiable with mini-batch. So be sure to set mini-batch size to 1.
+Neural ODE support mini-batch, use it to boost your training progress.
